@@ -2,7 +2,7 @@
 Costum Unity3D Shader
 
 Example image of ToonBasicHeightLevel Shader:
-[logo]: https://github.com/Benny93/custom_unity_shader/blob/master/HightLevelsAndCliffs.png
+![alt text](https://github.com/Benny93/custom_unity_shader/blob/master/HightLevelsAndCliffs.png "Preview")
 
 Youtube Links:
 
