@@ -8,15 +8,15 @@ Shader "Custom/ToonBasicHightLevels" {
      	_ColorMountain ("Color Mountain Level", Color) = (0.7,0.7,0.7,1)
      	
 		_HeightSea ("Height Sealevel", Float) = 0
-     	_HeightBeach ("Height Beach", Float) = 2
-     	_HeightVeg ("Height Vegetation", Float) = 3  
+     	_HeightBeach ("Height Beach", Float) = 1.15
+     	_HeightVeg ("Height Vegetation", Float) = 4.31 
      	
-     	_SmoothDistance("Smooth Distance", Range (.1, 2)) = 1  	
+     	_SmoothDistance("Smooth Distance", Range (.1, 2)) = 0.18 	
 		
 		_MainTex ("Base (RGB)", 2D) = "white" {}
 		_CliffTex ("Cliff Texture", 2D) = "grey" {}
 		_ToonShade ("ToonShader Cubemap(RGB)", CUBE) = "" { }  
-		_CliffDot("Cliff Factor Steepness", Range(0,1)) = 0.8	
+		_CliffDot("Cliff Factor Steepness", Range(0,1)) = 0.4	
      	_VecRight ("Right Vector ", Vector) = (0,1,0,0)
 	}
 
@@ -28,7 +28,7 @@ Shader "Custom/ToonBasicHightLevels" {
 			Cull Off
 			
 			CGPROGRAM
-// Upgrade NOTE: excluded shader from DX11 and Xbox360; has structs without semantics (struct v2f members NtoR)
+// Upgrade NOTE: excluded shader from DX11 and Xbox360;
 #pragma exclude_renderers d3d11 xbox360
 			#pragma vertex vert
 			#pragma fragment frag
@@ -72,7 +72,7 @@ Shader "Custom/ToonBasicHightLevels" {
 				float3 cubenormal : TEXCOORD1;
 				float4 worldPos : TEXCOORD2;
 				float2 texcoordCliff : TEXCOORD3;
-				float NtoR;
+				float NtoR: TEXCOORD4;
 				UNITY_FOG_COORDS(2)
 			};
 
